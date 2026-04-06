@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Mega Shop Center</title>
+    <style>
+        body { font-family: Arial; background: #f2f2f2; text-align: center; }
+        .box { background: white; padding: 20px; margin: 20px auto; width: 360px; border-radius: 10px; box-shadow: 0 0 10px rgba(0,0,0,0.1);}
+        input, select, button { padding: 8px; margin: 5px; width: 90%; }
+        h1 { color: #333; }
+        h2 { color: #444; }
+        p { margin: 4px 0; }
+    </style>
+</head>
+<body>
+
+<h1>🛒 MEGA SHOP CENTER</h1>
+
+<!-- PAGAMENTOS -->
+<div class="box">
+    <h2>💳 PAGAMENTOS</h2>
+    <p><b>M-Pesa:</b> 857206684</p>
+    <p><b>E-Mola:</b> 870500180</p>
+    <p><b>SUPORTE:</b> 857206684</p>
+</div>
+
+<!-- LISTA DE CLIENTES -->
+<div class="box">
+    <h2>📋 Clientes</h2>
+    {% for c in clientes %}
+        <p>{{c[1]}} | {{c[2]}} | Saldo: {{c[3]}} MT</p>
+    {% endfor %}
+</div>
+
+<!-- TABELA COMPLETA DE MEGAS -->
+<div class="box">
+    <h2>🤖 🚨 ATENÇÃO A NOVA TABELA 🚨</h2>
+
+    <h3>🛜 PLANO DIÁRIO (24 HORAS)</h3>
+    <p>13 MT = 512 MB</p>
+    <p>25 MT = 1024 MB</p>
+    <p>38 MT = 1536 MB</p>
+    <p>50 MT = 2048 MB</p>
+    <p>75 MT = 3072 MB</p>
+    <p>100 MT = 4096 MB</p>
+    <p>125 MT = 5120 MB</p>
+    <p>150 MT = 6144 MB</p>
+    <p>200 MT = 8192 MB</p>
+    <p>250 MT = 10240 MB</p>
+    <p>500 MT = 20400 MB</p>
+
+    <h3>🛜 PLANO SEMANAL (7 DIAS)</h3>
+    <p>60 MT = 1700 MB</p>
+    <p>100 MT = 2900 MB</p>
+    <p>110 MT = 3400 MB</p>
+    <p>165 MT = 5200 MB</p>
+    <p>220 MT = 7100 MB</p>
+    <p>320 MT = 10700 MB</p>
+
+    <h3>🛜 MEGAS MENSAL (30 DIAS)</h3>
+    <p>180 MT = 5120 MB</p>
+    <p>215 MT = 7168 MB</p>
+    <p>225 MT = 8000 MB</p>
+    <p>300 MT = 10240 MB</p>
+    <p>320 MT = 10752 MB</p>
+    <p>590 MT = 20480 MB</p>
+
+    <p><b>NB:</b> PACOTES SEMANAL E MENSAL NÃO DEVEM TER TXUNA</p>
+    <p><b>Importante:</b> Sempre que efetuar o pagamento, envie screenshot como comprovativo 🤝!</p>
+    <p>Se não receber os megas, envie o comprovativo via SMS:</p>
+    <p><b>Android:</b> 870500180 / 857206684</p>
+</div>
+
+<!-- COMPRAR MEGAS -->
+<div class="box">
+    <h2>🛒 Comprar Megas</h2>
+    <form action="/comprar" method="post">
+        <input name="numero" placeholder="Número do cliente"><br>
+        <select name="valor">
+            <option value="13">13 MT</option>
+            <option value="25">25 MT</option>
+            <option value="38">38 MT</option>
+            <option value="50">50 MT</option>
+            <option value="75">75 MT</option>
+            <option value="100">100 MT</option>
+            <option value="125">125 MT</option>
+            <option value="150">150 MT</option>
+            <option value="200">200 MT</option>
+            <option value="250">250 MT</option>
+            <option value="500">500 MT</option>
+            <option value="60">60 MT (Semanal)</option>
+            <option value="110">110 MT (Semanal)</option>
+            <option value="165">165 MT (Semanal)</option>
+            <option value="220">220 MT (Semanal)</option>
+            <option value="320">320 MT (Semanal/Mensal)</option>
+            <option value="180">180 MT (Mensal)</option>
+            <option value="215">215 MT (Mensal)</option>
+            <option value="225">225 MT (Mensal)</option>
+            <option value="300">300 MT (Mensal)</option>
+            <option value="320">320 MT (Mensal)</option>
+            <option value="590">590 MT (Mensal)</option>
+        </select><br>
+        <button type="submit">Comprar</button>
+    </form>
+</div>
+
+<!-- INSTRUÇÕES -->
+<div class="box">
+    <h2>📢 INSTRUÇÕES</h2>
+    <p>📸 Envie screenshot após pagamento</p>
+    <p>📩 SMS: 870500180 / 857206684</p>
+</div>
+
+</body>
+</html>
